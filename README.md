@@ -2,22 +2,19 @@
 
 This sample app demonstrates a photography site by using [`express`](https://www.npmjs.com/package/express), [`mongoose`](https://github.com/Automattic/mongoose) and [`stargate-mongoose`](https://github.com/stargate/stargate-mongoose). 
 
-![](./splash.png)
+![](./img/splash.png)
 
 ## 📋 How to
 
 - [01. Create Astra Account](#-1---create-your-datastax-astra-account)
 - [02. Create Astra Token](#-2---create-an-astra-token)
-- [03. Save your token](#-3---copy-the-token-value-in-your-clipboard)
-- [04. Create a Database](#-6---create-destination-database-and-a-keyspace)
-- [05. Register to OpenAI](#-8---register-to-openai)
-- [06. Setup Project](#-9---setup-project)
-- [07. Start the project](#-9---setup-project)
+- [03. Create a Database](#-3---create-a-database)
+- [04. Register to OpenAI](#-4---register-to-openai)
+- [05. Setup Project](#-5---setup-project)
+- [06. Run the project](#-6---run-the-project)
 
 
-## LAB
-
-> :warning" As of today the application is only available ON ASTRA DEV, please go to [AstraDB](https://dev.cloud.datastax.com/).
+> :warning: As of today the application is only available ON ASTRA DEV, please go to [AstraDB](https://dev.cloud.datastax.com/).
 
 
 #### ✅ `1` - Create your DataStax Astra account
@@ -52,20 +49,28 @@ The Token is in fact three separate strings: a `Client ID`, a `Client Secret` an
 }
 ```
 
-#### ✅ `3` - Sve the token value in your clipboard
+#### ✅ `3` - Create a Database
+
+If you are creating a new account, you will be brought to the DB-creation form directly.
+
+Otherwise, get to the databases dashboard (by clicking on Databases in the left-hand navigation bar, expanding it if necessary), and click the `[Create Database]` button on the right.
+
+![](./img/astra-create-db-1.png)
 
 
-You can also leave the windo open to copy the value in a second.
+Take a moment to fill the form:
+
+- **ℹ️ Fields Description**
+
+| Field                                      | Description                                                                                                                                                                                                                                    |
+|--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Vector Database vs Serverless Database** | `PICK VECTOR` In june 2023, Cassandra introduced the support of vector search to enable Generative AI use cases. You might consume your credit faster with a vector database.                                                                                |
+| **database name**                          | It does not need to be unique, is not used to initialize a connection, and is only a label (keep it between 2 and 50 characters). It is recommended to have a database for each of your applications. The free tier is limited to 5 databases. |
+| **keyspace**                               | `photography`                                                                     |
+| **Cloud Provider**                         | Choose whatever you like. Click a cloud provider logo, pick an Area in the list and finally pick a region. We recommend choosing a region that is closest to you to reduce latency. In free tier, there is very little difference.             |
 
 
-#### ✅ `4` - Create a Database
-
-in the user interface create a database with the following:
-
-KEYSPACE reate your database and keyspace `photography`
-
-
-#### ✅ `5` - Register to OpenAI
+#### ✅ `4` - Register to OpenAI
 
 - Access to [OpenAI platform](https://platform.openai.com/) and register.
 
@@ -80,7 +85,7 @@ You have a free trial for a month of so.
 EXPORT OPENAI_API_KEY=<key>
 ```
 
-#### ✅ `6` - Setup project
+#### ✅ `5` - Setup project
 
 ### Setting up .env file to run against AstraDB
 1. Copy the `.env.example` file to `.env` and fill in the values for the environment variables.
@@ -92,7 +97,7 @@ EXPORT OPENAI_API_KEY=<key>
 7. Set `ASTRA_APPLICATION_TOKEN` to your AstraDB application token
 
 
-#### ✅ `7` - Run the project
+#### ✅ `6` - Run the project
 
 
 - **Install Python and google-mediapipe**

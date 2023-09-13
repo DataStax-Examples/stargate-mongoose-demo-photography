@@ -8,5 +8,5 @@
   "tags": [{ "name": "javascript" }, { "name": "mongoose" }, { "name": "json-api" }],
   "category": "apps",
   "priority": 1,
-  "heroImage": "https://raw.githubusercontent.com/DataStax-Examples/stargate-mongoose-demo-photography/master/splash.png"
+  "heroImage": "https://raw.githubusercontent.com/DataStax-Examples/stargate-mongoose-demo-photography/master/img/splash.png"
 }
