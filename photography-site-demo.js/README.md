@@ -8,10 +8,9 @@ This sample app demonstrates a photography site by using [`express`](https://www
 
 ### cassandra backend
 Make sure you have Cassandra support
+> If want to run against AstraDB, please go to [AstraDB](https://dev.cloud.datastax.com/) create your vector database and keyspace 'photography' .
 
 > If want to run cassandra locally, you need to have a local Stargate instance(DSE-Next) and JSON API running as described on  the [main page](../README.md) of this repo.
->
-> If want to run against AstraDB, please go to [AstraDB](https://dev.cloud.datastax.com/) create your database and keyspace 'photography' .
 
 
 ### python and google-mediapipe
@@ -23,7 +22,6 @@ install [google-mediapipe](https://developers.google.com/mediapipe/solutions/gui
 Make sure you have Node.js 17 or higher
 
 
-
 ## .env
 
 ### Setting up .env file to run against AstraDB
@@ -32,7 +30,7 @@ Make sure you have Node.js 17 or higher
 3. Set `OPENAI_API_KEY` to your openAI api key
 4. Set `ASTRA_DBID` to your AstraDB database ID
 5. Set `ASTRA_REGION` to your AstraDB database region
-6. Set `ASTRA_KEYSPACE` to your AstraDB keyspace
+6. Set `ASTRA_KEYSPACE` to your AstraDB keyspace (should be 'photography')
 7. Set `ASTRA_APPLICATION_TOKEN` to your AstraDB application token
 
 
